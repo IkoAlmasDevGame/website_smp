@@ -72,20 +72,20 @@
                                     if($_SESSION['member'] == 1){
                                         ?>                                            
                                         <a role="button">Hi, <?php echo $_SESSION["username"]; ?></a>
-                                        <a href="../dashboard/logger.php"><span class="fa fa-file mr-5"></span>Logger</a>
-                                        <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
+                                        <a href=""><span class="fa fa-file mr-5"></span>Logger</a>
+                                        <a href=""><span class="fa fa-user mr-5"></span>Account</a>
                                         <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
                                         <?php
                                     }else if($_SESSION['member'] == 2){
                                         ?>
                                         <a role="button">Hi, <?php echo $_SESSION["username"]; ?></a>
-                                        <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
+                                        <a href=""><span class="fa fa-user mr-5"></span>Account</a>
                                         <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
                                         <?php
                                     }else if($_SESSION['member'] == 3){
                                         ?>
                                         <a role="button">Hi, <?php echo $_SESSION["username"]; ?></a>
-                                        <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
+                                        <a href=""><span class="fa fa-user mr-5"></span>Account</a>
                                         <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
                                         <?php
                                     }
