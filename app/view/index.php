@@ -5,9 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php 
-        include "../config/bootstrap.php";
+        include "../config/config.php";
     ?>
     <title>Dashboard Login SMP</title>
+
+    <!-- CSS System dari Module Js -->
+    <link rel="stylesheet" href="<?=base()?>system/css/bootstrapv5221.css">
+    <link rel="stylesheet" href="<?=base()?>system/css/tailwind.css">
+    <link rel="stylesheet" href="<?=base()?>system/css/text-bootstrap.css">
+    <link rel="stylesheet" href="<?=base()?>system/css/card-bootstrap.css">
+    <link rel="stylesheet" href="<?=base()?>system/css/font-awesome4.min.css">
+    <link rel="stylesheet" href="<?=base()?>system/css/fontawesome.css">
+    <link rel="stylesheet" href="<?=base()?>system/base.css">
+    <link rel="stylesheet" href="<?=base()?>system/css/components.css">
+    <link rel="stylesheet" href="<?=base()?>system/css/tailwind.css">
+    <link rel="stylesheet" href="<?=base()?>system/css/utilities.css">
+    <link rel="stylesheet" href="<?=base()?>system/css/glyphicon.css">
+    <link rel="stylesheet" href="<?=base()?>app/css/Home/style.css" type="text/css">
+
+    <!-- Icon Sekolah -->
+    <link rel="shortcut icon" href="<?=base()?>assets/icon/smp.ico" type="image/x-icon">
+
+    <!-- Module System Js -->
+    <script src="<?=base()?>system/modules/js/bootstrap.min.js"></script>
+    <script src="<?=base()?>system/modules/js/bootstrap.js"></script>
+    <script src="<?=base()?>system/modules/js/bootstrap.bundle.js"></script>
+    <script src="<?=base()?>system/modules/js/fontawesome.js"></script>
 </head>
 <body>
     <div id="layoutAuthentication">
@@ -28,7 +51,7 @@
                                         <option value="2">Khusus Guru</option>
                                         <option value="3">Khusus Siswa</option> <!-- Untuk Para Murid -->
                                     </select>
-                                    <button role="button" type="submit" name="submit" class="btn btn-primary ml-2">
+                                    <button role="button" type="submit" name="submit" class="btn btn-info btn-primary ml-2">
                                         <span class="glyphicon glyphicon-log-in"></span></button>
                                 </form>
                             </div>

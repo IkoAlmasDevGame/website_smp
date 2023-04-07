@@ -2,6 +2,7 @@
 include "../../controller/Account.php";
 include "../../database/Migrations/dbAccount.php";
 
+session_start();
 if(isset($_POST["submit"])){
     $userEmail = htmlentities(trim($_POST['userEmail']));
     $password = md5(trim($_POST['password']), false);
@@ -21,11 +22,11 @@ if(isset($_POST["submit"])){
     if(LoginAccount($userEmail,$password,$cardMember)){
         $_SESSION['status'] = "Berhasil Log-In";
         if($cardMember == 1){
-            header("location:");
+            header("location:../../view/Dashboard/index.php");
         }else if($cardMember == 2){
-            header("location:");
+            header("location:../../view/Dashboard/index.php");
         }else if($cardMember == 3){
-            header("location:");
+            header("location:../../view/Dashboard/index.php");
         }
     }else{
         ?>

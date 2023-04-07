@@ -1,0 +1,5 @@
+body {
+    background-size: cover;
+    background-color: rgba(205, 205, 205, 1);
+    background-blend-mode: darken;
+}

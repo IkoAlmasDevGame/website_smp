@@ -79,7 +79,7 @@ function LoginAccount($userEmail, $password, $cardMember){
     password_verify($password, PASSWORD_DEFAULT);
     password_hash($password, PASSWORD_DEFAULT);
 
-    $onUpdated = date('y-m-d h:i:s a');
+    $onUpdated = date('y-m-d H:i:s a');
 
     $data = "SELECT * FROM account_t WHERE userEmail='$userEmail' and password='$password' and member like '$cardMember'";
     $cek = $conAccount->query($data);
