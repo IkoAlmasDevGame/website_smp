@@ -7,4 +7,4 @@
 5. Sudah bisa diakses Tombol Log-In
 6. Sudah bisa diakses Tombol Save Create Account
 
-- Tambahan File Bootstrap dan Tailwind sudah di ubah di bagian System/modules
+- Tambahan File Bootstrap dan Tailwind sudah di ubah di bagian System/modules dan System/css
