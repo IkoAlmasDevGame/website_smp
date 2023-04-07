@@ -13,7 +13,7 @@ include "../config/config.php";
 <link rel="stylesheet" href="<?=base()?>app/css/Home/style.css">
 <link rel="shortcut icon" href="<?=base()?>assets/icon/smp.ico" type="image/x-icon">
 
-<script src="<?=base()?>system/js/bootstrap.min.js"></script>
-<script src="<?=base()?>system/js/bootstrap.js"></script>
-<script src="<?=base()?>system/js/bootstrap.bundle.js"></script>
-<script src="<?=base()?>system/js/fontawesome.js"></script>
+<script src="<?=base()?>system/modules/js/bootstrap.min.js"></script>
+<script src="<?=base()?>system/modules/js/bootstrap.js"></script>
+<script src="<?=base()?>system/modules/js/bootstrap.bundle.js"></script>
+<script src="<?=base()?>system/modules/js/fontawesome.js"></script>
