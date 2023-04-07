@@ -25,12 +25,6 @@
 
     <!-- Icon Sekolah -->
     <link rel="shortcut icon" href="<?=base()?>assets/icon/smp.ico" type="image/x-icon">
-
-    <!-- Module System Js -->
-    <script src="<?=base()?>system/modules/js/bootstrap.min.js"></script>
-    <script src="<?=base()?>system/modules/js/bootstrap.js"></script>
-    <script src="<?=base()?>system/modules/js/bootstrap.bundle.js"></script>
-    <script src="<?=base()?>system/modules/js/fontawesome.js"></script>
 </head>
 <body>
     <div id="layoutAuthentication">
@@ -169,5 +163,9 @@
             </main>
         </div>
     </div>
+    <!-- Module System Js -->
+    <script src="<?=base()?>system/modules/js/bootstrap.min.js"></script>
+    <script src="<?=base()?>system/modules/js/bootstrap.js"></script>
+    <script src="<?=base()?>system/modules/js/fontawesome.js"></script>
 </body>
 </html>
