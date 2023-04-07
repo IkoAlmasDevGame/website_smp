@@ -49,6 +49,7 @@
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
             <main>
+                <!-- Navbar Awal -->
                 <header class="navbar navbar-default fixed-top">
                     <div class="navbar-header">
                         <div class="container-fluid">
@@ -93,6 +94,7 @@
                             </li>
                         </ul>
                     </div>
+                    <!-- Navbar Akhir -->
                 </header>
             </main>
         </div>
