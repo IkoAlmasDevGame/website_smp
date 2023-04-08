@@ -16,10 +16,7 @@
     <link rel="stylesheet" href="<?=base()?>system/css/card-bootstrap.css">
     <link rel="stylesheet" href="<?=base()?>system/css/font-awesome4.min.css">
     <link rel="stylesheet" href="<?=base()?>system/css/fontawesome.css">
-    <link rel="stylesheet" href="<?=base()?>system/base.css">
-    <link rel="stylesheet" href="<?=base()?>system/css/components.css">
     <link rel="stylesheet" href="<?=base()?>system/css/tailwind.css">
-    <link rel="stylesheet" href="<?=base()?>system/css/utilities.css">
     <link rel="stylesheet" href="<?=base()?>system/css/glyphicon.css">
     <link rel="stylesheet" href="<?=base()?>app/css/Home/style.css" type="text/css">
 
