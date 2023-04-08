@@ -7,6 +7,7 @@
 5. Sudah bisa diakses Tombol Log-In
 6. Sudah bisa diakses Tombol Save Create Account
 7. Sudah bisa diakses ke halaman Home Dashboard SMP
+8. Sudah terdapat Dropdown Navigation di Home Dashboard SMP
+9. Terdapat Website Sosial Media Sekolah
 
 - Tambahan File Bootstrap dan Tailwind sudah di ubah di bagian System/modules dan System/css
-- Tolong Tambahkan Dropdown untuk Akses Ke beberapa Halaman
