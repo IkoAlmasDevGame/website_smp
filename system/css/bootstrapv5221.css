@@ -1777,6 +1777,14 @@ table th[class*="col-"] {
 .table-hover > tbody > tr.danger:hover > th {
   background-color: #ebcccc;
 }
+
+@media screen and (max-width: 575.98px) {
+  .table-responsive-sm {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .table-responsive {
     width: 100%;
@@ -1788,31 +1796,25 @@ table th[class*="col-"] {
     border: 1px solid #ddd;
   }
 
-  @media (max-width: 575.98px) {
-    .table-responsive-sm {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-  }
-  @media (max-width: 767.98px) {
+  @media screen and (max-width: 767.98px) {
     .table-responsive-md {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
     }
   }
-  @media (max-width: 991.98px) {
+  @media screen and (max-width: 991.98px) {
     .table-responsive-lg {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
     }
   }
-  @media (max-width: 1199.98px) {
+  @media screen and (max-width: 1199.98px) {
     .table-responsive-xl {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
     }
   }
-  @media (max-width: 1399.98px) {
+  @media screen and (max-width: 1399.98px) {
     .table-responsive-xxl {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
@@ -7715,15 +7717,5 @@ button.close {
 
 .bg-gradient {
   background-image: var(--bs-gradient) ;
-}
-
-#layoutAuthentication, #layoutAuthentication_content {
-  padding: 0;
-  margin: 0;
-}
-
-main {
-  padding: 0;
-  margin: 0;
 }
 /*# sourceMappingURL=bootstrap.css.map */
