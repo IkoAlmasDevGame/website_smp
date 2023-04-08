@@ -46,8 +46,8 @@
     <link rel="shortcut icon" href="<?=base()?>assets/icon/smp.ico" type="image/x-icon">
 </head>
 <body>
-    <div class="">
-        <div class="">
+    <div>
+        <div>
             <main>
                 <div class="navbar navbar-default fixed-top">
                     <div class="navbar-container" id="navbar-container">
