@@ -52,45 +52,14 @@
                 <div class="navbar navbar-default fixed-top">
                     <div class="navbar-container" id="navbar-container">
                         <div class="navbar-header">
-                            <img src="<?=base()?>assets/image/smp.png" alt="" class="img-responsive navbar-brand mt-6">
-                            <a href="index.php" class="navbar-brand mt-6">Dashboard Sekolah Menengah Pertama</a>
+                            <img src="<?=base()?>assets/image/smp.png" alt="" class="img-responsive navbar-brand">
+                            <a href="index.php" class="navbar-brand">Dashboard Sekolah Menengah Pertama</a>
                             <button type="button" class="navbar-toggle collapsed" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
                                 <span class="sr-only">Toggle Navigation</span>
                                 <span class="icon-bar"></span>
 		        		    	<span class="icon-bar"></span>
 		        		    	<span class="icon-bar"></span>
                             </button>
-                        </div>
-                        <div class="collapse navbar-collapse -mt-6 mr-40">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="dropdown"><a class="dropdown-toggle" data-bs-toggle="dropdown" role="button">
-                                    &nbsp&nbsp<span class="glyphicon glyphicon-user mx-auto -mr-2" id="dropbtn" onclick="myFunction()"></span></a>
-                                    <div id="myDropdown" class="dropdown-content">
-                                    <?php 
-                                        if($_SESSION['member'] == 1){
-                                            ?>                                            
-                                            <a role="button">Hi, <?php echo $_SESSION["username"]; ?></a>
-                                            <a href="../dashboard/logger.php"><span class="fa fa-file mr-5"></span>Logger</a>
-                                            <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
-                                            <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
-                                            <?php
-                                        }else if($_SESSION['member'] == 2){
-                                            ?>
-                                            <a role="button">Hi, <?php echo $_SESSION["username"]; ?></a>
-                                            <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
-                                            <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
-                                            <?php
-                                        }else if($_SESSION['member'] == 3){
-                                            ?>
-                                            <a role="button">Hi, <?php echo $_SESSION["username"]; ?></a>
-                                            <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
-                                            <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
-                                            <?php
-                                        }
-                                    ?>
-                                    </div>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>

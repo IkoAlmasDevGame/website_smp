@@ -1,214 +1,286 @@
 <style type="text/css">
-#smalls {
-    width: 19.5rem;
-    right: 0rem;
-    left: 0.5rem;
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 30px;
 }
 
-#border {
-    left: 0;
-    height: 90.5%;
-    background-color: whitesmoke;
-    background-blend-mode: darken;
-
-    border-top: 1px;
-    border-right: 1px;
-    border-bottom: 1px;
-    border-left: 0px;
-    border-color: black;
-    border-style: solid;
-    border-radius: 3px;
-
-    margin-bottom: 3px;
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
 }
 
-.fix-col-md {
-    width: 21.15rem;
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
 }
 
-.active:hover {
-    cursor: pointer;
+/* Add an active class to the active dropdown button */
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.sidenav .show{
+    display: block;
 }
 </style>
 
-<div class="fix-col-md fixed-bottom" id="border">
-    <div class="row">
-        <div class="col-xs-12 mt-1 ml-10 h-100%">
-            <a href="" class="img-thumbnail rounded-full mt-6">
-                <img src="<?=base()?>assets/image/images.jfif" class="img-responsive rounded-full"/>
-            </a>
-            <p class="text-medium mx-auto mb-5 ml-5 fw-semibold" style="letter-spacing: 3px;">
-            <?php echo Member($_SESSION["member"]);?>
-            </p>
-        </div>
+<div class="sidenav">
+  <div class="row">
+    <div class="col-xs-12 mt-1 ml-5 h-100%">
+        <a href="" class="img-thumbnail rounded-full mt-6">
+            <img src="<?=base()?>assets/image/images.jfif" alt="" class="img-responsive rounded-full">
+        </a>
     </div>
-    <div class="table-bordered"></div>
-    <div class="row"></div>
-    <ul class="nav nav-pills nav-stacked">
-        <li class="active text-small-3" id="smalls">
-            <a href="../Dashboard/index.php" class="mt-5 text-small-3 text-start">
-                <span class="fa fa-home mr-5"></span>Dashboard Sekolah</a>
-        </li>
+    <p class="text-medium ml-24 text-white fw-normal mb-5"><?php echo Member($_SESSION['member']);?></p>
+  </div>
+  <div class="table-bordered"></div>
+  <a href="index.php"><span class="fa fa-home mr-3"></span>Dashboard Sekolah</a>
+  <?php 
+    if($_SESSION['member'] == 1){
+    ?>
+    <a href="daftar.php"><span class="fa fa-user mr-3"></span>Daftar Baru</a>
+    <a href="#"><span class="fa fa-user mr-3"></span>Absensi Murid</a>
+    <button class="dropdown-btn"><span class="fa fa-home mr-3"></span>Koperasi
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+        <a href="#">Dashboard Koperasi</a>
+        <a href="#">Data Koperasi</a>
+        <a href="#">Penjualan Koperasi</a>
+        <a href="#">History Penjualan</a>
+        <a href="#">History Keuangan</a>
+    </div>
+    <button class="dropdown-btn"><span class="fa fa-book mr-3"></span>Perpustakaan
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+        <a href="#">Dashboard Perpustakaan</a>
+        <a href="#">Data Perpustakaan</a>
+        <a href="#">History Peminjaman</a>
+    </div>
+    <button class="dropdown-btn"><span class="fa fa-file mr-3"></span>Data Sekolah
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+        <a href="#">Mata Pelajaran Per Kelas</a>
+        <a href="#">Lihat Guru</a>
+        <a href="#">Struktur Organisasi</a>
+    </div>
+    <button class="dropdown-btn"><span class="fa fa-user mr-3"></span>Hi, <?php echo $_SESSION["username"]; ?>
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
         <?php 
-        if($_SESSION['member'] == 1){
-            ?>
-            <li class="dropdown" id="smalls">
-                <button type="button" class="btn btn-primary dropdown-toggle text-start fw-normal mt-5" data-bs-toggle="dropdown" id="smalls" style="font-size: 14px;">
-                    <span class="fa fa-home mr-5"></span>Koperasi Sekolah
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#" class="active">Dashboard Koperasi</a></li>
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#">Data Barang Koperasi</a></li>
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#">Penjualan Koperasi</a></li>
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#">History Penjualan</a></li>
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#">History Keuangan</a></li>
-                </ul>
-            </li>
-            <li class="dropdown" id="smalls">
-                <button type="button" class="btn btn-primary dropdown-toggle mt-5 text-start fw-normal" data-bs-toggle="dropdown" id="smalls" style="font-size: 14px;">
-                    <span class="fa fa-book mr-5"></span>Perpustakaan Sekolah
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#" class="active">Dashboard Perpustakaan</a></li>
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#">Data Buku Perpustakaan</a></li>
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#">History Peminjaman Buku</a></li>
-                </ul>
-            </li>
-            <li class="dropdown" id="smalls">
-                <button type="button" class="btn btn-primary dropdown-toggle text-start fw-normal mt-5" data-bs-toggle="dropdown" id="smalls" style="font-size: 14px;">
-                    <span class="fa fa-file mr-5"></span>Data Sekolah
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#" class="active">Cek Semua Mapel</a></li>
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#">Cek Data Guru</a></li>
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#">Cek Data Struktur Sekolah</a></li>
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#">Cek Data File Sekolah</a></li>
-                </ul>
-            </li>
-            <li class="active text-small-3" id="smalls">
-                <a href="" class="mb-6 mt-5 text-small-3 text-start">
-                    <span class="fa fa-home mr-5"></span>Daftar Murid</a>
-            </li>
-            <li class="active text-small-3" id="smalls">
-                <a href="" class="mb-6 mt-5 text-small-3 text-start">
-                    <span class="fa fa-home mr-5"></span>Lihat Murid Absensi</a>
-            </li>
-            <div class="table table-responsive table-bordered">
-                <div class="flex justify-center items-center mt-16">
-                    <div class="flex-wrap">
-                        <h6 class="text-center -mt-5 mb-10">Sosial Media Sekolah</h6>
-                        <a href="#">
-                            <div class="fa fa-whatsapp text-black bg-transparent mr-5" style="font-size: 24px;"></div>
-                        </a>
-                        <a href="#">
-                            <div class="fa fa-instagram text-black bg-transparent mr-5" style="font-size: 24px;"></div>
-                        </a>
-                        <a href="#">
-                            <div class="fa fa-envelope text-black bg-transparent mr-5" style="font-size: 24px;"></div>
-                        </a>
-                        <a href="#">
-                            <div class="fa fa-youtube text-black bg-transparent mr-5" style="font-size: 24px;"></div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <?php
-        }else if($_SESSION['member'] == 2){
-            ?>
-            <li class="dropdown" id="smalls">
-                <button type="button" class="btn btn-primary dropdown-toggle text-start fw-normal mt-5" data-bs-toggle="dropdown" id="smalls" style="font-size: 14px;">
-                    <span class="fa fa-home mr-5"></span>Koperasi Sekolah
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#" class="active">Dashboard Koperasi</a></li>
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#">Penjualan Koperasi</a></li>
-                </ul>
-            </li>
-            <li class="dropdown" id="smalls">
-                <button type="button" class="btn btn-primary dropdown-toggle mt-5 text-start fw-normal" data-bs-toggle="dropdown" id="smalls" style="font-size: 14px;">
-                    <span class="fa fa-book mr-5"></span>Perpustakaan Sekolah
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#" class="active">Dashboard Perpustakaan</a></li>
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#">Data Buku Perpustakaan</a></li>
-                </ul>
-            </li>
-            <li class="dropdown" id="smalls">
-                <button type="button" class="btn btn-primary dropdown-toggle text-start fw-normal mt-5" data-bs-toggle="dropdown" id="smalls" style="font-size: 14px;">
-                    <span class="fa fa-file mr-5"></span>Data Sekolah
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#" class="active">Cek Semua Mapel</a></li>
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#">Cek Data Guru</a></li>
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#">Cek Data Struktur Sekolah</a></li>
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#">Cek Data File Sekolah</a></li>
-                </ul>
-            </li>
-            <li class="active text-small-3" id="smalls">
-                <a href="" class="mb-6 mt-5 text-small-3 text-start">
-                    <span class="fa fa-home mr-5"></span>Lihat Murid Absensi</a>
-            </li>            
-            <div class="table table-responsive table-bordered">
-                <div class="flex justify-center items-center mt-16">
-                    <div class="flex-wrap">
-                        <h6 class="text-center -mt-5 mb-10">Sosial Media Sekolah</h6>
-                        <a href="#">
-                            <div class="fa fa-whatsapp text-black bg-transparent mr-5" style="font-size: 24px;"></div>
-                        </a>
-                        <a href="#">
-                            <div class="fa fa-instagram text-black bg-transparent mr-5" style="font-size: 24px;"></div>
-                        </a>
-                        <a href="#">
-                            <div class="fa fa-envelope text-black bg-transparent mr-5" style="font-size: 24px;"></div>
-                        </a>
-                        <a href="#">
-                            <div class="fa fa-youtube text-black bg-transparent mr-5" style="font-size: 24px;"></div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <?php
-        }else if($_SESSION['member'] == 3){
-            ?>
-            <li class="dropdown" id="smalls">
-                <button type="button" class="btn btn-primary dropdown-toggle text-start fw-normal mt-5" data-bs-toggle="dropdown" id="smalls" style="font-size: 14px;">
-                    <span class="fa fa-home mr-5"></span>Koperasi Sekolah
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#" class="active">Dashboard Koperasi</a></li>
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#">Penjualan Koperasi</a></li>
-                </ul>
-            </li>
-            <li class="dropdown" id="smalls">
-                <button type="button" class="btn btn-primary dropdown-toggle mt-5 text-start fw-normal" data-bs-toggle="dropdown" id="smalls" style="font-size: 14px;">
-                    <span class="fa fa-book mr-5"></span>Perpustakaan Sekolah
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#" class="active">Dashboard Perpustakaan</a></li>
-                    <li><a class="dropdown-item mb-4 text-start text-small-3" href="#">Data Buku Perpustakaan</a></li>
-                </ul>
-            </li>
-            <div class="table table-responsive table-bordered mt-5">
-                <div class="flex justify-start items-start fixed-bottom ml-10 mb-10">
-                    <div class="flex-wrap">
-                        <h6 class="text-center -mt-5 mb-10">Sosial Media Sekolah</h6>
-                        <a href="#">
-                            <div class="fa fa-whatsapp text-black bg-transparent mr-5" style="font-size: 24px;"></div>
-                        </a>
-                        <a href="#">
-                            <div class="fa fa-instagram text-black bg-transparent mr-5" style="font-size: 24px;"></div>
-                        </a>
-                        <a href="#">
-                            <div class="fa fa-envelope text-black bg-transparent mr-5" style="font-size: 24px;"></div>
-                        </a>
-                        <a href="#">
-                            <div class="fa fa-youtube text-black bg-transparent mr-5" style="font-size: 24px;"></div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <?php
-        }
+            if($_SESSION['member'] == 1){
+                ?>                                            
+                <a href="../dashboard/logger.php"><span class="fa fa-file mr-5"></span>Logger</a>
+                <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
+                <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
+                <?php
+            }else if($_SESSION['member'] == 2){
+                ?>
+                <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
+                <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
+                <?php
+            }else if($_SESSION['member'] == 3){
+                ?>
+                <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
+                <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
+                <?php
+            }
         ?>
-    </ul>
+    </div>
+    <div class="table-responsive fixed-bottom">
+        <div class="flex justify-start items-center">
+            <div class="flex">
+            <a href="#"><span class="fa fa-whatsapp" style="font-size: 18px;"></span></a>
+            <a href="#"><span class="fa fa-youtube" style="font-size: 18px;"></span></a>
+            <a href="#"><span class="fa fa-facebook" style="font-size: 18px;"></span></a>
+            <a href="#"><span class="fa fa-envelope" style="font-size: 18px;"></span></a>
+            <a href="#"><span class="fa fa-instagram" style="font-size: 18px;"></span></a>
+            </div>
+        </div>        
+    </div>
+  <?php
+    }else if($_SESSION['member'] == 2){
+    ?>
+    <a href="#"><span class="fa fa-user mr-3"></span>Absensi Murid</a>
+    <button class="dropdown-btn"><span class="fa fa-home mr-3"></span>Koperasi
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+        <a href="#">Dashboard Koperasi</a>
+        <a href="#">Penjualan Koperasi</a>
+    </div>
+    <button class="dropdown-btn"><span class="fa fa-book mr-3"></span>Perpustakaan
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+        <a href="#">Dashboard Perpustakaan</a>
+        <a href="#">Data Perpustakaan</a>
+    </div>
+    <button class="dropdown-btn"><span class="fa fa-file mr-3"></span>Data Sekolah
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+        <a href="#">Mata Pelajaran Per Kelas</a>
+        <a href="#">Lihat Guru</a>
+        <a href="#">Struktur Organisasi</a>
+    </div>
+    <button class="dropdown-btn"><span class="fa fa-user mr-3"></span>Hi, <?php echo $_SESSION["username"]; ?>
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+        <?php 
+            if($_SESSION['member'] == 1){
+                ?>                                            
+                <a href="../dashboard/logger.php"><span class="fa fa-file mr-5"></span>Logger</a>
+                <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
+                <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
+                <?php
+            }else if($_SESSION['member'] == 2){
+                ?>
+                <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
+                <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
+                <?php
+            }else if($_SESSION['member'] == 3){
+                ?>
+                <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
+                <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
+                <?php
+            }
+        ?>
+    </div>    
+    <div class="table-responsive fixed-bottom">
+        <div class="flex justify-start items-center">
+            <div class="flex">
+            <a href="#"><span class="fa fa-whatsapp" style="font-size: 18px;"></span></a>
+            <a href="#"><span class="fa fa-youtube" style="font-size: 18px;"></span></a>
+            <a href="#"><span class="fa fa-facebook" style="font-size: 18px;"></span></a>
+            <a href="#"><span class="fa fa-envelope" style="font-size: 18px;"></span></a>
+            <a href="#"><span class="fa fa-instagram" style="font-size: 18px;"></span></a>
+            </div>
+        </div>        
+    </div>    
+    <?php
+    }else if($_SESSION['member'] == 3){
+    ?>
+    <a href="#"><span class="fa fa-user mr-3"></span>Absensi Murid</a>
+    <button class="dropdown-btn"><span class="fa fa-home mr-3"></span>Koperasi
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+        <a href="#">Dashboard Koperasi</a>
+        <a href="#">Penjualan Koperasi</a>
+    </div>
+    <button class="dropdown-btn"><span class="fa fa-book mr-3"></span>Perpustakaan
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+        <a href="#">Dashboard Perpustakaan</a>
+        <a href="#">Data Perpustakaan</a>
+    </div>
+    <button class="dropdown-btn"><span class="fa fa-user mr-3"></span>Hi, <?php echo $_SESSION["username"]; ?>
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+        <?php 
+            if($_SESSION['member'] == 1){
+                ?>                                            
+                <a href="../dashboard/logger.php"><span class="fa fa-file mr-5"></span>Logger</a>
+                <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
+                <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
+                <?php
+            }else if($_SESSION['member'] == 2){
+                ?>
+                <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
+                <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
+                <?php
+            }else if($_SESSION['member'] == 3){
+                ?>
+                <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
+                <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
+                <?php
+            }
+        ?>
+    </div>    
+    <div class="table-responsive fixed-bottom">
+        <div class="flex justify-start items-center">
+            <div class="flex">
+            <a href="#"><span class="fa fa-whatsapp" style="font-size: 18px;"></span></a>
+            <a href="#"><span class="fa fa-youtube" style="font-size: 18px;"></span></a>
+            <a href="#"><span class="fa fa-facebook" style="font-size: 18px;"></span></a>
+            <a href="#"><span class="fa fa-envelope" style="font-size: 18px;"></span></a>
+            <a href="#"><span class="fa fa-instagram" style="font-size: 18px;"></span></a>
+            </div>
+        </div>        
+    </div>    
+    <?php
+    }
+  ?>
+</div>
+
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(){
+  document.querySelectorAll('.sidenav .dropdown-btn').forEach(function(element){
+    
+    element.addEventListener('click', function (e) {
+
+      let nextEl = element.nextElementSibling;
+      let parentEl  = element.parentElement;	
+
+        if(nextEl) {
+            e.preventDefault();	
+            let mycollapse = new bootstrap.Collapse(nextEl);
+            
+            if(nextEl.classList.contains('show')){
+              mycollapse.hide();
+            } else {
+                mycollapse.show();
+                // find other submenus with class=show
+                var opened_submenu = parentEl.parentElement.querySelector('.dropdown-container.show');
+                // if it exists, then close all of them
+                if(opened_submenu){
+                  new bootstrap.Collapse(opened_submenu);
+                }
+            }
+        }
+    }); // addEventListener
+  }) // forEach
+}); 
+</script>
 </div>
