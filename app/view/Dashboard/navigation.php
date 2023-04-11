@@ -116,11 +116,6 @@
                 <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
                 <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
                 <?php
-            }else if($_SESSION['member'] == 3){
-                ?>
-                <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
-                <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
-                <?php
             }
         ?>
     </div>
@@ -177,64 +172,6 @@
                 <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
                 <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
                 <?php
-            }else if($_SESSION['member'] == 3){
-                ?>
-                <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
-                <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
-                <?php
-            }
-        ?>
-    </div>    
-    <div class="table-responsive fixed-bottom">
-        <div class="flex justify-start items-center">
-            <div class="flex">
-            <a href="#"><span class="fa fa-whatsapp" style="font-size: 18px;"></span></a>
-            <a href="#"><span class="fa fa-youtube" style="font-size: 18px;"></span></a>
-            <a href="#"><span class="fa fa-facebook" style="font-size: 18px;"></span></a>
-            <a href="#"><span class="fa fa-envelope" style="font-size: 18px;"></span></a>
-            <a href="#"><span class="fa fa-instagram" style="font-size: 18px;"></span></a>
-            </div>
-        </div>        
-    </div>    
-    <?php
-    }else if($_SESSION['member'] == 3){
-    ?>
-    <a href="#"><span class="fa fa-user mr-3"></span>Absensi Murid</a>
-    <button class="dropdown-btn"><span class="fa fa-home mr-3"></span>Koperasi
-        <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-container">
-        <a href="#">Dashboard Koperasi</a>
-        <a href="#">Penjualan Koperasi</a>
-    </div>
-    <button class="dropdown-btn"><span class="fa fa-book mr-3"></span>Perpustakaan
-        <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-container">
-        <a href="#">Dashboard Perpustakaan</a>
-        <a href="#">Data Perpustakaan</a>
-    </div>
-    <button class="dropdown-btn"><span class="fa fa-user mr-3"></span>Hi, <?php echo $_SESSION["username"]; ?>
-        <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-container">
-        <?php 
-            if($_SESSION['member'] == 1){
-                ?>                                            
-                <a href="../dashboard/logger.php"><span class="fa fa-file mr-5"></span>Logger</a>
-                <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
-                <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
-                <?php
-            }else if($_SESSION['member'] == 2){
-                ?>
-                <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
-                <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
-                <?php
-            }else if($_SESSION['member'] == 3){
-                ?>
-                <a href="../dashboard/edit.php?user_id=<?php echo $_SESSION["id_user"];?>"><span class="fa fa-user mr-5"></span>Account</a>
-                <a href="header.php?aksi=keluar"><i class="fa fa-sign-out mr-4"></i>Log out</a>
-                <?php
             }
         ?>
     </div>    
@@ -251,7 +188,7 @@
     </div>    
     <?php
     }
-  ?>
+    ?>
 </div>
 
 <script type="text/javascript">

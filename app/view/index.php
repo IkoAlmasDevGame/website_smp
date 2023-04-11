@@ -40,7 +40,6 @@
                                         <option>Pilih Kartu Member</option>
                                         <option value="1">Khusus Administrasi</option>
                                         <option value="2">Khusus Guru</option>
-                                        <option value="3">Khusus Siswa</option> <!-- Untuk Para Murid -->
                                     </select>
                                     <button role="button" type="submit" name="submit" class="btn btn-info btn-primary ml-2">
                                         <span class="glyphicon glyphicon-log-in"></span></button>
@@ -108,7 +107,6 @@
                                             <option>Pilih Kartu Member</option>
                                             <option value="1">Khusus Administrasi</option>
                                             <option value="2">Khusus Guru</option>
-                                            <option value="3">Khusus Siswa</option> <!-- Untuk Para Murid -->
                                         </select>
                                     </div>
                                     <div class="form-group flex">

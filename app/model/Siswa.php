@@ -19,9 +19,9 @@ function Agama($agama_id){
 
 function Gender($gender_id){
     if($gender_id == 1){
-        echo "Laki - Laki";
+        echo "👨🏻";
     }else{
-        echo "Perempuan";
+        echo "👩🏻";
     }
 }
 

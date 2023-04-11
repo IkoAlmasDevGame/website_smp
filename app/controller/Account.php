@@ -9,8 +9,8 @@ function CreateAccount($userEmail, $userName, $password, $cardMember, $gender, $
     $cardMember = htmlentities(trim($_POST['member']));
     $gender = htmlentities(trim($_POST['gender']));
     $birthday = htmlentities(trim($_POST['birthday']));
-    $onCreated = date('y-m-d h:i:s a');
-    $onUpdated = date('y-m-d h:i:s a');
+    $onCreated = date('y-m-d H:i:s a');
+    $onUpdated = date('y-m-d H:i:s a');
     $checkInput = htmlentities(trim($_POST['selesai']));
 
     if($checkInput){
@@ -29,7 +29,6 @@ function CreateAccount($userEmail, $userName, $password, $cardMember, $gender, $
                 $onUpdated,
                 $checkInput
             );
-            return true;
         }
         return true;
     }else{

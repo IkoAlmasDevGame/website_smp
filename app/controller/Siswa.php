@@ -32,4 +32,8 @@ function CreateSiswa($nisn,$nama,$tggl,$prov,$agama_id,$gender_id,$checkInput){
     }
 }
 
+function RuanganKelas(){
+    
+}
+
 ?>

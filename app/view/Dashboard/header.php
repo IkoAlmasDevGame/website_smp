@@ -49,11 +49,11 @@
     <div>
         <div>
             <main>
-                <div class="navbar navbar-default fixed-top">
-                    <div class="navbar-container" id="navbar-container">
-                        <div class="navbar-header">
-                            <img src="<?=base()?>assets/image/smp.png" alt="" class="img-responsive navbar-brand">
-                            <a href="index.php" class="navbar-brand">Dashboard Sekolah Menengah Pertama</a>
+                <div class="navbar navbar-default fixed-top -mt-6">
+                    <div class="navbar-container fixed-top">
+                        <div class="navbar-header fixed-top">
+                            <img src="<?=base()?>assets/image/smp.png" alt="" class="img-responsive navbar-brand -mt-3">
+                            <a href="index.php" class="navbar-brand -mt-3">Dashboard Sekolah Menengah Pertama</a>
                             <button type="button" class="navbar-toggle collapsed" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
                                 <span class="sr-only">Toggle Navigation</span>
                                 <span class="icon-bar"></span>
